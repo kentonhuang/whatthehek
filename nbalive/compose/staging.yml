@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:10.4-alpine'
+    volumes:
+      - '/var/lib/postgresql/data'
+    restart: always
+  app:
+    build:
+      context: ..
+      dockerfile: ./build/django_staging.Dockerfile
+      args:
+        - DJANGO_ENV=staging
+    image: 'example/django_api'
+    env_file: 'envs/staging.env'
+    depends_on:
+      - db
+    restart: always
+  frontend:
+    build:
+      context: ..
+      dockerfile: ./build/frontend.Dockerfile
+      args:
+        - REACT_ENV=staging
+    image: 'example/frontend'
+    env_file: 'envs/frontend_development.env'
+    ports:
+      - '3000:3000'
+    restart: always
