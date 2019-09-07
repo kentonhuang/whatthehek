@@ -1,0 +1,124 @@
+{
+  "teams": {
+    "1": {
+      "loc": "Atlanta",
+      "name": "Hawks"
+    },
+    "2": {
+      "loc": "Boston",
+      "name": "Celtics"
+    },
+    "3": {
+      "loc": "Brooklyn",
+      "name": "Nets"
+    },
+    "4": {
+      "loc": "Charlotte",
+      "name": "Hornets"
+    },
+    "5": {
+      "loc": "Chicago",
+      "name": "Bulls"
+    },
+    "6": {
+      "loc": "Cleveland",
+      "name": "Cavaliers"
+    },
+    "7": {
+      "loc": "Dallas",
+      "name": "Mavericks"
+    },
+    "8": {
+      "loc": "Denver",
+      "name": "Nuggets"
+    },
+    "9": {
+      "loc": "Detroit",
+      "name": "Pistons"
+    },
+    "10": {
+      "loc": "Golden State",
+      "name": "Warriors"
+    },
+    "11": {
+      "loc": "Houston",
+      "name": "Rockets"
+    },
+    "12": {
+      "loc": "Indiana",
+      "name": "Pacers"
+    },
+    "13": {
+      "loc": "Los Angeles",
+      "name": "Clippers"
+    },
+    "14": {
+      "loc": "Los Angeles",
+      "name": "Lakers"
+    },
+    "15": {
+      "loc": "Memphis",
+      "name": "Grizzlies"
+    },
+    "16": {
+      "loc": "Miami",
+      "name": "Heat"
+    },
+    "17": {
+      "loc": "Milwaukee",
+      "name": "Bucks"
+    },
+    "18": {
+      "loc": "Minnesota",
+      "name": "Timberwolves"
+    },
+    "19": {
+      "loc": "New Orleans",
+      "name": "Pelicans"
+    },
+    "20": {
+      "loc": "New York",
+      "name": "Knicks"
+    },
+    "21": {
+      "loc": "Oklahoma City",
+      "name": "Thunder"
+    },
+    "22": {
+      "loc": "Orlando",
+      "name": "Magic"
+    },
+    "23": {
+      "loc": "Philadelphia",
+      "name": "76ers"
+    },
+    "24": {
+      "loc": "Phoenix",
+      "name": "Suns"
+    },
+    "25": {
+      "loc": "Portland",
+      "name": "Trail Blazers"
+    },
+    "26": {
+      "loc": "Sacramento",
+      "name": "Kings"
+    },
+    "27": {
+      "loc": "San Antonio",
+      "name": "Spurs"
+    },
+    "28": {
+      "loc": "Toronto",
+      "name": "Raptors"
+    },
+    "29": {
+      "loc": "Utah",
+      "name": "Jazz"
+    },
+    "30": {
+      "loc": "Washington",
+      "name": "Wizards"
+    }
+  }
+}

@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import _ from 'lodash'
+
+import BoxScoreLoader from './components/BoxScore/BoxScoreLoader';
 
 class App extends Component {
   state = {
+    gameData: {},
     score1: 0,
     score2: 0,
+    loading: 1,
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:8000/api/boxscore/1')
+      .then(res => {
+        const gameData = res.data;
+        this.setState({gameData});
+        this.setState({loading: 0})
+      })
   }
 
   scoreHandler = () => {
@@ -21,17 +36,12 @@ class App extends Component {
   }
 
   render() {
+    if(this.state.loading) {
+      return <div>Loading</div>
+    }
     return (
       <div className="App">
-        <div className="score">
-          <span className="score1">{this.state.score1}</span>
-          -
-          <span className="score2">{this.state.score2}</span>
-        </div>
-        <div>
-          <button onClick={this.scoreHandler}>Score1</button>
-          <button onClick={this.scoreHandler2}>Score2</button>
-        </div>
+        <BoxScoreLoader gameData={this.state.gameData}/>
       </div>
     );
   }
