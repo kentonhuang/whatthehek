@@ -5,6 +5,7 @@ import axios from 'axios';
 import _ from 'lodash'
 
 import BoxScoreLoader from './components/BoxScore/BoxScoreLoader';
+import GraphLoader from './components/GraphLoader/GraphLoader';
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <BoxScoreLoader gameData={this.state.gameData}/>
+        <GraphLoader gameData={this.state.gameData}/>
       </div>
     );
   }
