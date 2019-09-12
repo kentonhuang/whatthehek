@@ -4,6 +4,8 @@ import _ from 'lodash'
 
 import BoxScore from './BoxScore';
 
+import styles from './BoxScore.module.css';
+
 class BoxScoreLoader extends Component {
 
   state = {
@@ -39,7 +41,7 @@ class BoxScoreLoader extends Component {
     }
     return (
       
-      <div>
+      <div className={styles.BoxScore}>
         <BoxScore gameData={away}/>
         <br></br>
         <BoxScore gameData={home}/>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Graph from './Graph';
 
+import styles from './GraphLoader.module.css';
+
 class GraphLoader extends Component {
 
   state = {
@@ -22,7 +24,7 @@ class GraphLoader extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.GraphLoader}>
         <div>
           {this.mapGraphs()}
         </div>

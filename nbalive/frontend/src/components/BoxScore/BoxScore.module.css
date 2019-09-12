@@ -1,0 +1,4 @@
+.BoxScore {
+  grid-column: 3 / 11;
+  grid-row: 1 / 3;
+}

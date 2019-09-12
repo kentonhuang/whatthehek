@@ -3,6 +3,8 @@ import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import _ from 'lodash'
 
+
+
 class BoxScore extends Component {
 
   genTable = () => {
@@ -121,7 +123,7 @@ class BoxScore extends Component {
   render() {
     const columns = this.genTable()
     return (
-      <div>
+      <div >
         <ReactTable 
           data={this.props.gameData}
           columns={columns}
