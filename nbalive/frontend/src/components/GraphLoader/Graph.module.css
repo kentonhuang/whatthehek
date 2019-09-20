@@ -1,7 +1,27 @@
 .graph {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  width: 400px;
+  text-align: center;
 }
 
-.recharts-wrapper {
+.topBar {
+  margin-bottom: 5px;
+}
+
+.graphTypes {
+  margin-bottom: 10px;
+}
+
+.graphBar {
+}
+
+.typeDisplay {
   display: inline-block;
+  margin-left: 5px;
+  border: 1px solid #5DACFF;
+  background-color: #5DACFF;
+  border-radius: 8px;
+  padding: 2px 10px;
+  color: #FFFFFF;
 }

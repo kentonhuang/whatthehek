@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
-import _ from 'lodash'
 
+const BoxScore = ({gameData}) => {
 
-
-class BoxScore extends Component {
-
-  genTable = () => {
+  const genTable = () => {
     return [{
         Header: 'Name',
         accessor: 'name',
@@ -120,19 +117,17 @@ class BoxScore extends Component {
     ]
   }
 
-  render() {
-    const columns = this.genTable()
-    return (
-      <div >
-        <ReactTable 
-          data={this.props.gameData}
-          columns={columns}
-          showPagination={false}
-          minRows={0}
-        />
-      </div>
-    );
-  }
+  const columns = genTable()
+  return (
+    <div >
+      <ReactTable 
+        data={gameData}
+        columns={columns}
+        showPagination={false}
+        minRows={0}
+      />
+    </div>
+  );
 }
 
 export default BoxScore;

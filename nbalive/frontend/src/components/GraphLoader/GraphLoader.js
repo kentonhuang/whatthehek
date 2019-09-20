@@ -1,39 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Graph from './Graph';
 
 import styles from './GraphLoader.module.css';
 
-class GraphLoader extends Component {
+function GraphLoader({gameData}) {
+  const [graphs, setGraphs] = useState(['graph'])
 
-  state = {
-    graphs: ['graph']
-  }
-
-  mapGraphs = () => {
-    return this.state.graphs.map((graph, index) => {
-      return <Graph key={index} type={graph} gameData={this.props.gameData}/>
+  const mapGraphs = () => {
+    return graphs.map((graph, index) => {
+      return <Graph index={index} key={index} type={graph} gameData={gameData} removeGraph={removeGraph}/>
     })
   }
 
-  addGraphButton = (event) => {
-    let graphs = this.state.graphs;
-    graphs.push('graph');
-    this.setState({graphs})
+  const removeGraph = (key) => {
+    let graphsTemp = [...graphs];
+    console.log(key);
+    graphsTemp.splice(key, 1);
+    setGraphs(graphsTemp)
   }
 
-  render() {
-    return (
-      <div className={styles.GraphLoader}>
-        <div>
-          {this.mapGraphs()}
-        </div>
-        <div>
-          <button onClick={this.addGraphButton}>Add Graph</button>
-        </div>
-      </div>
-    );
+  const addGraphButton = () => {
+    let graphsTemp = [...graphs];
+    graphsTemp.push('graph' + graphsTemp.length);
+    setGraphs(graphsTemp)
   }
+
+  return (
+    <div className={styles.GraphLoader}>
+      <div>
+        {mapGraphs()}
+      </div>
+      <div>
+        <button onClick={addGraphButton}>Add Graph</button>
+      </div>
+    </div>
+  );
 }
 
 export default GraphLoader;
