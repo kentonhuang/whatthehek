@@ -3,13 +3,17 @@
   display: grid;
   grid-template-columns: 1fr repeat(10, 1fr) 1fr;
   grid-gap: 10px;
-  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 .App-logo {

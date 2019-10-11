@@ -1,0 +1,39 @@
+.GameScoreBox {
+  grid-column: 3 / 11;
+  grid-row: 2 / 3;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.GameScoreSummary {
+  align-self: center;
+  display: flex
+}
+
+.TeamName {
+  font-size: 3rem;
+}
+
+.Final {
+  font-size: 1.2rem;
+}
+
+.GameScoreSummary > span {
+  align-self: center;
+}
+
+.GameScoreLogo {
+  display: inline-block;
+  text-align: center;
+  margin: 15px; 
+}
+
+.GameScoreLogo > img {
+  display: block;
+}
+
+.GameScoreLogo > span {
+  font-size: 2.6rem;
+}

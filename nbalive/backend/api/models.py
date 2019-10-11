@@ -6,7 +6,9 @@ class Game(models.Model):
   id = models.IntegerField(primary_key=True)
   date = models.DateField(auto_now=False, auto_now_add=False)
   away_team = models.IntegerField()
+  away_team_name = models.TextField(default="a")
   home_team = models.IntegerField()
+  home_team_name = models.TextField(default="h")
   box_score = models.IntegerField()
 
 class BoxScore(models.Model):
