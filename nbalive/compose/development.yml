@@ -35,17 +35,13 @@ services:
     image: "redis:alpine"
     ports:
       - '6379:6379'
-  selenium-hub:
-    image: selenium/hub
-    container_name: selenium-hub
+  hub:
+    image: selenium/hub:3.141.59
     ports:
-      - "4444:4444"
+      - 4444:4444
   chrome:
-    image: selenium/node-chrome
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:3.141.59
     depends_on:
-      - selenium-hub
+      - hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - HUB_HOST=hub

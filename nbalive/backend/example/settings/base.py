@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'celery',
     'corsheaders',
+    'selenium',
 ]
 
 MIDDLEWARE = [
