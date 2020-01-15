@@ -1,4 +1,4 @@
-#!/bin/bash
-#set -euxo pipefail
+!/bin/bash
+set -euxo pipefail
 
 npm run start

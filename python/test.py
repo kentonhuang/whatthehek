@@ -4,7 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from multiprocessing import Process
+# from multiprocessing import Process
 
 options = Options() 
 #options.add_argument("--headless") # Runs Chrome in headless mode.
@@ -31,45 +31,45 @@ url2 = 'https://steamcommunity.com/id/m0nsterOG/badges/'
 #   print(score2.text)
 #   time.sleep(2)
 
-url3 = 'http://localhost:3001/'
-url4 = 'http://localhost:3002/'
+# url3 = 'http://localhost:3001/'
+# url4 = 'http://localhost:3002/'
 
-def proc1():
-  data = []
-  driver = webdriver.Chrome(chrome_options=options)
-  driver.get(url3)
+# def proc1():
+#   data = []
+#   driver = webdriver.Chrome(chrome_options=options)
+#   driver.get(url3)
 
-  score1 = driver.find_element_by_class_name('score1')
-  score2 = driver.find_element_by_class_name('score2')
+#   score1 = driver.find_element_by_class_name('score1')
+#   score2 = driver.find_element_by_class_name('score2')
 
-  while(True):
-    print(score1.text)
-    print(score2.text)
-    time.sleep(2)
+#   while(True):
+#     print(score1.text)
+#     print(score2.text)
+#     time.sleep(2)
 
-def proc2():
-  data = []
-  driver = webdriver.Chrome(chrome_options=options)
-  driver.get(url4)
-  element = None
-  score1 = driver.find_element_by_class_name('li')
+# def proc2():
+#   data = []
+#   driver = webdriver.Chrome(chrome_options=options)
+#   driver.get(url4)
+#   element = None
+#   score1 = driver.find_element_by_class_name('li')
 
-  while(True):
-    try:
-      element = score1.find_element_by_xpath('//li[1]')
-    except:
-      print('error')
-    if(element):
-      print(element.text)
-    time.sleep(2)
+#   while(True):
+#     try:
+#       element = score1.find_element_by_xpath('//li[1]')
+#     except:
+#       print('error')
+#     if(element):
+#       print(element.text)
+#     time.sleep(2)
 
-if __name__ == '__main__':
-  # p1 = Process(target=proc1)
-  # p1.start()
-  p2 = Process(target=proc2)
-  p2.start()
-  # p1.join()
-  p2.join()
+# if __name__ == '__main__':
+#   # p1 = Process(target=proc1)
+#   # p1.start()
+#   p2 = Process(target=proc2)
+#   p2.start()
+#   # p1.join()
+#   p2.join()
 
 # current_page = 1
 # while True:
@@ -115,3 +115,71 @@ if __name__ == '__main__':
 #   print(unlocked)
 
 #driver.quit()
+
+def sel_test():
+
+  stuff = webdriver.ChromeOptions()
+  stuff.add_argument('--verbose')
+  stuff.add_argument("--whitelisted-ips")
+  stuff.add_argument("--start-maximized")                                                                                                                                
+
+  capabilities = stuff.to_capabilities()
+
+  # driver = webdriver.Remote(
+  #     command_executor='http://172.17.0.1:4444/wd/hub',
+  #     desired_capabilities=capabilities,
+  # )
+
+  driver = webdriver.Chrome(chrome_options=stuff)
+
+  # driver.get('http://f3c24081.ngrok.io/')
+
+  # score1 = driver.find_element_by_class_name('score1')
+  # score2 = driver.find_element_by_class_name('score2')
+
+  # i = 0;
+
+  # while i < 5:
+  #   logger.info(score1.text)
+  #   logger.info(score2.text)
+  #   i += 1
+  #   time.sleep(2)
+  score1 = [];
+  driver.get('https://stats.nba.com/game/0021900002/?StartRange=7200&EndRange=9000&RangeType=2')
+  #driver.get('https://google.com')
+  time.sleep(3)
+
+  tables = driver.find_elements_by_class_name('nba-stat-table__overflow')
+  players1 = tables[0].find_elements_by_xpath('.//table/tbody/tr')
+  players2 = tables[1].find_elements_by_xpath('.//table/tbody/tr')
+
+  #rows = players1[0].find_elements_by_tag_name('td')
+
+  for player in players1:
+    rows = player.find_elements_by_tag_name('td')
+    for x in rows:
+      print(x.text)
+
+
+
+
+  el = driver.find_element_by_tag_name('body')
+  source = el.get_attribute("outerHTML");
+  print(len(rows))
+  #print(len(players2))
+
+  # i = 0;
+
+  # while i < 5:
+  #   logger.info(score1.text)
+  #   logger.info(score2.text)
+  #   i += 1
+  #   time.sleep(2)
+
+  driver.quit()
+  
+
+if __name__ == '__main__':
+    sel_test()
+
+# FIRST IS 
